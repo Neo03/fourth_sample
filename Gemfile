@@ -9,10 +9,15 @@ gem 'rails', '4.1.7'
 group :development, :test do
 	gem 'sqlite3','1.3.10'
 	gem 'rspec-rails','3.1.0'
+	gem 'guard-rspec', '4.3.1'
+	gem 'spork-rails', '4.0.0'
+	gem 'guard-spork','2.0.1'
+	gem 'childprocess', '0.5.5'	
+	gem 'rspec-core', '3.1.7'
 end
 group :test do
 	gem 'selenium-webdriver', '2.44.0'
-	gem 'capybara', '2.4.4'
+	gem 'capybara', '2.4.4'	
 end
 group :production do
 	gem 'pg', '0.17.1'
