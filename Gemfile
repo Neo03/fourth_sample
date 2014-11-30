@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-#mygemset is: rvm use 2.1.4@my_rails_4_0
+#my gemset is: rvm use 2.1.4@my_rails_4_0
 ruby '2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
+gem 'bootstrap-sass','3.3.1.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 	gem 'sqlite3','1.3.10'
