@@ -20,6 +20,7 @@ group :development, :test do
 	gem 'guard-spork','2.0.1'
 	gem 'childprocess', '0.5.5'	
 	gem 'rspec-core', '3.1.7'
+	gem 'rspec-its', '1.1.0'
 end
 group :test do
 	gem 'selenium-webdriver', '2.44.0'
