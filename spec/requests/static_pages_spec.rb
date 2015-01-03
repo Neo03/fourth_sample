@@ -33,6 +33,12 @@ describe "Static pages" do
           expect(page).to have_selector("li##{item.id}", text: item.content)
         end
       end
+      it "should have count microposts" do
+        expect{ current_user.microposts.count }
+      end
+      it "should microposts pluralize" do
+        expect{ pluralize(current_user.microposts.count, "micropost") }
+      end
     end
   end
                        

@@ -29,12 +29,30 @@ describe "Micropost pages" do
 
   describe "micropost destruction" do
     before { FactoryGirl.create(:micropost, user: user) }
-
     describe "as correct user" do
       before { visit root_path }
       it "should delete a micropost" do
         expect { click_link "delete" }.to change(Micropost, :count).by(-1) 
       end
+    end
+  end
+
+  describe "as not correct user" do      
+      let(:another_user) { FactoryGirl.create(:another_user) }
+      before do
+        FactoryGirl.create(:micropost, user: user)
+        sign_in another_user
+        visit users_path
+
+        it { should_not have_link('delete', href: user_path(Micropost.first)) }
+      end    
+  end
+
+  describe "pagination" do
+    it "should paginate the feed" do
+      40.times { FactoryGirl.create(:micropost, user: user, content: "Consectetur add test") }
+      visit root_path
+      expect(page).to have_selector("div.pagination") 
     end
   end
 end
