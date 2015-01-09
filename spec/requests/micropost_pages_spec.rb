@@ -38,7 +38,7 @@ describe "Micropost pages" do
   end
 
   describe "as not correct user" do      
-      let(:another_user) { FactoryGirl.create(:another_user) }
+      let(:another_user) { FactoryGirl.create(:user) }
       before do
         FactoryGirl.create(:micropost, user: user)
         sign_in another_user
